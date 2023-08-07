@@ -1,11 +1,16 @@
-const addBtn = document.getElementById('add')
+const addBtn = document.getElementById('add')  
+//now this variable stores a path to the button element
 
+//get any prev notes that are stored in local storage
 const notes = JSON.parse(localStorage.getItem('notes'))
 
+//if any prev exists, then add them to the current list
 if(notes) {
     notes.forEach(note => addNewNote(note))
 }
 
+//listens for users event
+//in this case mouse click
 addBtn.addEventListener('click', () => addNewNote())
 
 function addNewNote(text = '') {
@@ -21,6 +26,10 @@ function addNewNote(text = '') {
     <div class="main ${text ? "" : "hidden"}"></div>
     <textarea class="${text ? "hidden" : ""}"></textarea>
     `
+
+    //. -> u r talking about a class
+    //# -> u r talking about an id
+    //if nothing then u r selecting a tag
 
     const editBtn = note.querySelector('.edit')
     const deleteBtn = note.querySelector('.delete')
