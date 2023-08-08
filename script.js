@@ -3,6 +3,9 @@ const addBtn = document.getElementById('add')
 
 //get any prev notes that are stored in local storage
 const notes = JSON.parse(localStorage.getItem('notes'))
+// javascript-obj-notation 
+// json.parse-- stored local data to javascipt
+
 
 //if any prev exists, then add them to the current list
 if(notes) {
