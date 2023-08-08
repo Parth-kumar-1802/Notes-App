@@ -25,27 +25,31 @@ function addNewNote(text = '') {
     note.classList.add('note')
     // adds css elements to div element  
 
+    // setup inner html of note 
     note.innerHTML = `
-    <div class="tools">
-        <button class="edit"><i class="fas fa-edit"></i></button>
-        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+    <div class="tools">       // div tags can be maipulated by css
+        <button class="edit"><i class="fas fa-edit"></i></button>    // using font awesome edit button css 
+        <button class="delete"><i class="fas fa-trash-alt"></i></button>   // using font awesome delete button css
     </div>
-
-    <div class="main ${text ? "" : "hidden"}"></div>
-    <textarea class="${text ? "hidden" : ""}"></textarea>
+     // applying css based on condition
+     // main: main content of notes will be displayed here
+     // textarea: where editing will happen 
+    <div class="main ${text ? "" : "hidden"}"></div>  // if text is present show main area
+    <textarea class="${text ? "hidden" : ""}"></textarea>  // if text is absent show text area
     `
-
+    // for queryselector:dom
     //. -> u r talking about a class
     //# -> u r talking about an id
     //if nothing then u r selecting a tag
+    // selecting specific elements with in note div
 
-    const editBtn = note.querySelector('.edit')
-    const deleteBtn = note.querySelector('.delete')
-    const main = note.querySelector('.main')
-    const textArea = note.querySelector('textarea')
+    const editBtn = note.querySelector('.edit') // select edit class within note div
+    const deleteBtn = note.querySelector('.delete') // select delete class
+    const main = note.querySelector('.main')   // select main class 
+    const textArea = note.querySelector('textarea') // select textarea element
 
-    textArea.value = text
-    main.innerHTML = marked(text)
+    textArea.value = text  // changing text area content with the text inserted 
+    main.innerHTML = marked(text)  // using marked js functionality to convert inserted text to html code 
 
     deleteBtn.addEventListener('click', () => {
         note.remove()    
