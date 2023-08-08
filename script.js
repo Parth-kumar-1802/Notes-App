@@ -5,20 +5,25 @@ const addBtn = document.getElementById('add')
 const notes = JSON.parse(localStorage.getItem('notes'))
 // javascript-obj-notation 
 // json.parse-- stored local data to javascipt
-
+// from local storage getting previously stored notes in 'notes' array
 
 //if any prev exists, then add them to the current list
+// iterate through the notes array and for each element call addnew-note fn, adding it to user interface
 if(notes) {
     notes.forEach(note => addNewNote(note))
 }
 
 //listens for users event
 //in this case mouse click
-addBtn.addEventListener('click', () => addNewNote())
+addBtn.addEventListener('click', () => addNewNote())  
+// (a,b) when a happens do b
 
-function addNewNote(text = '') {
+function addNewNote(text = '') {  
+    
     const note = document.createElement('div')
+    // createElement: dom functionality:creates a new element node
     note.classList.add('note')
+    // adds css 
 
     note.innerHTML = `
     <div class="tools">
@@ -43,7 +48,7 @@ function addNewNote(text = '') {
     main.innerHTML = marked(text)
 
     deleteBtn.addEventListener('click', () => {
-        note.remove()
+        note.remove()    
 
         updateLS()
     })
@@ -62,7 +67,12 @@ function addNewNote(text = '') {
     })
 
     document.body.appendChild(note)
-}
+
+
+    
+} // ends 
+
+
 
 function updateLS() {
     const notesText = document.querySelectorAll('textarea')
