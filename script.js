@@ -58,20 +58,23 @@ function addNewNote(text = '') {
     })
 
     editBtn.addEventListener('click', () => {  
-        main.classList.toggle('hidden')
+        main.classList.toggle('hidden')     // toggle the visibility of the main and text area  
+                                            // changes from main display to editing text area on clicking 
         textArea.classList.toggle('hidden')
     })
 
-    textArea.addEventListener('input', (e) => {
-        const { value } = e.target
+    textArea.addEventListener('input', (e) => { // event listener activates when the user enters input 
+                                                 
+        const { value } = e.target            // current value of text area changes to input text
+                                           // target returns the element on which event occured
 
-        main.innerHTML = marked(value)
+        main.innerHTML = marked(value)  // changes value entered by the user to html
 
-        updateLS()
+        updateLS()       // update local storage 
     })
 
-    document.body.appendChild(note)
-
+    document.body.appendChild(note)  //  document refers to html doc -> doc.body: body of the html
+                                     // adds the note as a child to the body of the html --> now they will appear on web page
 
     
 } // ends 
@@ -79,11 +82,12 @@ function addNewNote(text = '') {
 
 
 function updateLS() {
-    const notesText = document.querySelectorAll('textarea')
+    const notesText = document.querySelectorAll('textarea')  // selects all the text area elements
 
-    const notes = []
+    const notes = []             // empty array notes
 
-    notesText.forEach(note => notes.push(note.value))
+    notesText.forEach(note => notes.push(note.value))   // iterates through all text area elements and push them to notes array
 
-    localStorage.setItem('notes', JSON.stringify(notes))
+    localStorage.setItem('notes', JSON.stringify(notes))   // use of local storage api 
+                                                           // stores value in notes after performing json stringify 
 }
