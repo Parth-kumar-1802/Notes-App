@@ -51,13 +51,13 @@ function addNewNote(text = '') {
     textArea.value = text  // changing text area content with the text inserted 
     main.innerHTML = marked(text)  // using marked js functionality to convert inserted text to html code 
 
-    deleteBtn.addEventListener('click', () => {
-        note.remove()    
+    deleteBtn.addEventListener('click', () => {  // eventlistener to delete button
+        note.remove()     // removes the note 
 
-        updateLS()
+        updateLS()   // updates data in local storage 
     })
 
-    editBtn.addEventListener('click', () => {
+    editBtn.addEventListener('click', () => {  
         main.classList.toggle('hidden')
         textArea.classList.toggle('hidden')
     })
