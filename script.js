@@ -23,7 +23,7 @@ function addNewNote(text = '') {
     const note = document.createElement('div')
     // createElement: dom functionality:creates a new element node
     note.classList.add('note')
-    // adds css 
+    // adds css elements to div element  
 
     note.innerHTML = `
     <div class="tools">
