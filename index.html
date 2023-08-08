@@ -1,15 +1,19 @@
+ <!-- External css: Font awesome, External javascript:marked.js-->
+
+
 <!DOCTYPE html>   <!-- html 5 doc-->    <!-- -->
 <html lang="en">  <!--lang attribute- define language of webpage -->
   <head>      <!-- meta data --> 
-    <meta charset="UTF-8" />  <!--encoding -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />  <!--character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!-- meta tag controls viewport setting,how content is displayed, initial scale: zoom level-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+      <!--link tag: links css to html, rel:relation b/w 2 ,href : link , integrity:no tamper file transfer, crossorigin-anonymous: dont reveal user data   -->
+    <link rel="stylesheet" href="style.css" />  <!--adding our custom css -->
     <title>Notes App</title>   <!-- title of web page -->
   </head>
   <body>
-    <button class="add" id="add">
-      <i class="fas fa-plus"></i> Add note
+    <button class="add" id="add">  <!--button tag to add button -->
+      <i class="fas fa-plus"></i> Add note <!-- fas fa plus : font awesome plus symbol-->
     </button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
