@@ -1,5 +1,5 @@
 const addBtn = document.getElementById('add')  
-//now this variable stores a path to the button element
+//constant variable holds the value-> document refers to html doc -> we are calling in doc by id value the reference to add button
 
 //get any prev notes that are stored in local storage
 const notes = JSON.parse(localStorage.getItem('notes'))
